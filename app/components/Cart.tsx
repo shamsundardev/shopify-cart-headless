@@ -180,9 +180,10 @@ function CartLineQuantity({line}: {line: CartLine}) {
 
   return (
     <div className="cart-line-quantiy">
-      <small>Quantity: {quantity} &nbsp;&nbsp;</small>
+    <small className="cart-line-quantiy">Quantity:</small>
       <CartLineUpdateButton lines={[{id: lineId, quantity: prevQuantity}]}>
         <button
+        className="quantity__button"
           aria-label="Decrease quantity"
           disabled={quantity <= 1}
           name="decrease-quantity"
@@ -191,9 +192,10 @@ function CartLineQuantity({line}: {line: CartLine}) {
           <span>&#8722; </span>
         </button>
       </CartLineUpdateButton>
-      &nbsp;
+      &nbsp;  <small className="cart-line-quantiy"> {quantity} &nbsp;&nbsp;</small>
       <CartLineUpdateButton lines={[{id: lineId, quantity: nextQuantity}]}>
         <button
+        className="quantity__button"
           aria-label="Increase quantity"
           name="increase-quantity"
           value={nextQuantity}
